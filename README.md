@@ -1,49 +1,69 @@
 # team-profile-generator
 
-prompt:
+## Badges
 
-team manager:
+![MIT](https://img.shields.io/badge/license-MIT-success)
 
-- name
-- employee ID
-- email address
-- office number
+## Description
 
-Type of employee they want to enter:
-Options:
-Engineer / Intern
+This is an application used to generate an HTML file in which shows the information about the team. The data is recieved from the series of questions which prompts the user to answer once the application is invoked.
 
-Engineer:
+## Tools
 
-- name
-- id
-- email
-- github
+- JavaScript : Used to write the functions.
+- Inquirer : Used to get the files to help create the application.
+- Jest : Used to test JavaScript code.
+- NPM : An online repository for publishing of open-source Node.js projects.
 
-Intern:
+## Table of Contents
 
-- name
-- id
-- email
-- school
+- [Installation](#installation)
+- [Usage](#usage)
+- [Test](#test)
+- [Walkthrough](#walkthrough)
+- [Sample](#sample)
+- [License](#license)
 
-Prompt to enter more employees or are you done, if yes loop back to type of employee they want
-to enter
+## Installation
 
-GIVEN a command-line application that accepts user input
-WHEN I am prompted for my team members and their information
-THEN an HTML file is generated that displays a nicely formatted team roster based on user input
-WHEN I click on an email address in the HTML
-THEN my default email program opens and populates the TO field of the email with the address
-WHEN I click on the GitHub username
-THEN that GitHub profile opens in a new tab
-WHEN I start the application
-THEN I am prompted to enter the team manager’s name, employee ID, email address, and office number
-WHEN I enter the team manager’s name, employee ID, email address, and office number
-THEN I am presented with a menu with the option to add an engineer or an intern or to finish building my team
-WHEN I select the engineer option
-THEN I am prompted to enter the engineer’s name, ID, email, and GitHub username, and I am taken back to the menu
-WHEN I select the intern option
-THEN I am prompted to enter the intern’s name, ID, email, and school, and I am taken back to the menu
-WHEN I decide to finish building my team
-THEN I exit the application, and the HTML is generated
+After the application has been downloaded/copied, in your terminal you want to type in "npm install inquirer" to get the files to get started.
+
+## Usage
+
+Helps user to create an HTML file with the information given from the user to create a webpage with the Team's data!
+
+## Test
+
+After the application has been downloaded. In your terminal, you want to type in "npm run test" to test to see whether the application's test fails or passes.
+
+## Walkthrough
+
+[Walkthrough](https://drive.google.com/file/d/1T0MST4A5assL36bhccK5VIkfRgmGuXV9/view)
+
+## Sample
+
+[Sample generated file](./dist/index.html)
+
+## License
+
+#### MIT License
+
+Copyright (c) 2021 Dyravuth Yorn
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
