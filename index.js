@@ -3,7 +3,8 @@ const inquirer = require("inquirer");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const Manager = require("./lib/Manager");
-// const generateHTML = require(./src)
+const generateHTML = require("./src/template");
+const employees = [];
 
 const createManager = () => {
   inquirer
@@ -62,7 +63,13 @@ const createManager = () => {
       },
     ])
     .then((manager) => {
-      //store manager data
+      const boss = new Manager(
+        manager.name,
+        manager.id,
+        manager.email,
+        manager.office
+      );
+      employees.push(boss);
       continueOrNot();
     });
 };
@@ -82,7 +89,7 @@ const continueOrNot = () => {
           employeeType();
           break;
         case "No":
-          // build team
+          buildTeam();
           break;
         default:
           console.log("An error has occured!");
@@ -171,7 +178,13 @@ const createEngineer = () => {
       },
     ])
     .then((engineer) => {
-      //store engineer data
+      const worker = new Engineer(
+        engineer.name,
+        engineer.id,
+        engineer.email,
+        engineer.github
+      );
+      employees.push(worker);
       continueOrNot();
     });
 };
@@ -234,9 +247,19 @@ const createIntern = () => {
       },
     ])
     .then((intern) => {
-      //store intern data
+      const worker = new Intern(
+        intern.name,
+        intern.id,
+        intern.email,
+        intern.school
+      );
+      employees.push(worker);
       continueOrNot();
     });
 };
 
 createManager();
+const buildTeam = () => {
+  const html = generateHTML(employees);
+  console.log(html);
+};
