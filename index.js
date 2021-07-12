@@ -234,6 +234,7 @@ const createIntern = () => {
             return false;
           }
         },
+      },
       {
         type: "input",
         name: "school",
