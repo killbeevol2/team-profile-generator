@@ -40,10 +40,11 @@ const createManager = () => {
         name: "email",
         message: "Enter team Manager's email address: ",
         validate: (emailInput) => {
-          if (emailInput) {
+          const check = emailInput.match(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/);
+          if (check) {
             return true;
           } else {
-            console.log("Please enter your Managers's email address!");
+            console.log("\nPlease enter a valid email address!");
             return false;
           }
         },
@@ -155,10 +156,11 @@ const createEngineer = () => {
         name: "email",
         message: "Enter team Engineer's email address: ",
         validate: (emailInput) => {
-          if (emailInput) {
+          const check = emailInput.match(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/);
+          if (check) {
             return true;
           } else {
-            console.log("Please enter your Engineer's email address!");
+            console.log("\nPlease enter a valid email address!");
             return false;
           }
         },
@@ -224,14 +226,14 @@ const createIntern = () => {
         name: "email",
         message: "Enter team Intern's email address: ",
         validate: (emailInput) => {
-          if (emailInput) {
+          const check = emailInput.match(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/);
+          if (check) {
             return true;
           } else {
-            console.log("Please enter your Intern's email address!");
+            console.log("\nPlease enter a valid email address!");
             return false;
           }
         },
-      },
       {
         type: "input",
         name: "school",
@@ -261,5 +263,12 @@ const createIntern = () => {
 createManager();
 const buildTeam = () => {
   const html = generateHTML(employees);
-  console.log(html);
+  writeHtml(html);
+};
+
+const writeHtml = (html) => {
+  fs.writeFile("./dist/index.html", html, (err) => {
+    if (err) throw err;
+    console.log("Congrats! You've built your team!!");
+  });
 };

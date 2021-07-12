@@ -1,5 +1,5 @@
 const template = (employees) => {
-  const html = `
+  let html = `
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -23,13 +23,30 @@ const template = (employees) => {
       <h1 class="w-100 bg-dark p-5 text-center text-warning"><strong>My Team</strong></h1>
     </header>
     <main class = "container d-flex flex-row flex-wrap justify-content-evenly">
-``
+`;
+  employees.forEach((employee) => {
+    switch (employee.getRole()) {
+      case "Manager":
+        html += manager(employee);
+        break;
 
+      case "Engineer":
+        html += engineer(employee);
+        break;
+
+      case "Intern":
+        html += intern(employee);
+        break;
+    }
+  });
+
+  html += `
     </main>
   </body>
 </html>
 
 `;
+  return html;
 };
 
 const manager = (data) => {
@@ -40,8 +57,8 @@ const manager = (data) => {
         <h6 class="card-subtitle mb-2 text-light text-center"><i class="fas fa-star px-1"></i>${data.getRole()}</h6>
             <ul class="list-group">
                 <li class="list-group-item">ID : ${data.getId()}</li>
-                <li class="list-group-item">Email: ${data.getEmail()} </li>
-                <li class="list-group-item">Office number: ${
+                <li class="list-group-item">Email : <a href = "mailto:${data.getEmail()}">${data.getEmail()}</a> </li>
+                <li class="list-group-item">Office number : ${
                   data.officeNumber
                 }</li>
             </ul>
@@ -55,11 +72,11 @@ const engineer = (data) => {
     <div class="card my-3" style="width: 30%">
           <div class="card-body bg-primary">
             <h5 class="card-title text-light text-center"><strong>${data.getName()}</strong></h5>
-            <h6 class="card-subtitle mb-2 text-light text-center"><i class="fas fa-star-half-alt"></i>${data.getRole()}</h6>
+            <h6 class="card-subtitle mb-2 text-light text-center"><i class="fas fa-star-half-alt px-1"></i>${data.getRole()}</h6>
             <ul class="list-group">
                 <li class="list-group-item">ID : ${data.getId()}</li>
-                <li class="list-group-item">Email : ${data.getEmail()} </li>
-                <li class="list-group-item">GitHub : ${data.getGithub()}</li>
+                <li class="list-group-item">Email : <a href = "mailto:${data.getEmail()}">${data.getEmail()}</a> </li>
+                <li class="list-group-item">Github : <a href = "https://github.com/${data.getGithub()}">${data.getGithub()}</a> </li>
             </ul>
           </div>
         </div>
@@ -71,10 +88,10 @@ const intern = (data) => {
         <div class="card my-3" style="width: 30%">
             <div class="card-body bg-primary">
                 <h5 class="card-title text-light text-center"><strong>${data.getName()}</strong></h5>
-                <h6 class="card-subtitle mb-2 text-light text-center"><i class="far fa-star"></i>${data.getRole()}</h6>
+                <h6 class="card-subtitle mb-2 text-light text-center"><i class="far fa-star px-1"></i>${data.getRole()}</h6>
                 <ul class="list-group">
                     <li class="list-group-item">ID : ${data.getId()}</li>
-                    <li class="list-group-item">Email : ${data.getEmail()} </li>
+                    <li class="list-group-item">Email : <a href = "mailto:${data.getEmail()}">${data.getEmail()}</a> </li>
                     <li class="list-group-item">School Name: ${data.getSchool()}</li>
                 </ul>
             </div>
@@ -82,4 +99,4 @@ const intern = (data) => {
     `;
 };
 
-export default template;
+module.exports = template;
