@@ -6,7 +6,7 @@
 
 ## Description
 
-This is an application used to generate an HTML file in which shows the information about the team. The data is recieved from the series of questions which prompts the user to answer once the application is invoked.
+This is an application used to generate an HTML file in which shows the information about the team. The data is received from the series of questions which prompts the user to answer once the application is invoked.
 
 ## Tools
 
