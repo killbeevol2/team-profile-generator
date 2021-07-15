@@ -26,7 +26,7 @@ This is an application used to generate an HTML file in which shows the informat
 
 ## Installation
 
-After the application has been downloaded/copied, in your terminal you want to type in "npm install inquirer" to get the files to get started.
+After the application has been downloaded/copied, in your terminal you want to type in "npm install inquirer" to get the files and get started.
 
 ## Usage
 
